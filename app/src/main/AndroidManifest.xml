@@ -20,6 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".ProgressBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter
+                android:priority="9">
+                <action
+                    android:name="DownloadProgressMessage">
+                </action>
+            </intent-filter>
+        </receiver>
         <service android:name=".DeepJobService"
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="false"/>
